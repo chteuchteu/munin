@@ -909,7 +909,7 @@ p.graph_info {
   border: 1px solid #bbb;
   border-radius: 2px;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2); }
-  #legend .legendHead {
+  #legend thead tr {
     font-size: 15px;
     text-align: left;
     font-weight: bold;
@@ -920,20 +920,20 @@ p.graph_info {
     border: 1px solid #3f535c;
     background-color: #546E7A;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3); }
-    #legend .legendHead th {
+    #legend thead tr th {
       padding: 6px 10px 6px 15px;
       white-space: nowrap;
       font-weight: 500; }
-  #legend td {
+  #legend tbody td {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.75);
     padding: 8px 15px;
     border-bottom: 1px solid #d8d8d8; }
-  #legend .oddrow {
-    background-color: #f8f8f8; }
-  #legend .evenrow {
+  #legend tbody tr:nth-child(even) {
     background-color: #fdfdfd; }
-  #legend .lastrow td {
+  #legend tbody tr:nth-child(odd) {
+    background-color: #f8f8f8; }
+  #legend tbody tr:last-child td {
     border-bottom: 0 solid transparent !important; }
 
 /* Overview */
