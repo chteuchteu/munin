@@ -1,0 +1,77 @@
+/**
+ * munin-monitoring
+ * Nodeview specific styling
+ */
+
+/* Event ruler */
+#eventRulerMouseTrigger {
+	position: fixed;
+	padding: 0 10px;
+	height: 100%;
+	top: 0;
+	left: 364px;
+	z-index: 1;
+	cursor: col-resize;
+
+	#eventRuler {
+		border-left: 1px solid #000;
+		border-right: 1px solid #fff;
+		opacity: 0.5;
+		height: 100%;
+		width: 0;
+	}
+}
+
+/* Nodeview tabs */
+#content[data-tabs=true] {
+	ul.tabs {
+		margin: 10px 0 0 -30px;
+		padding: 0 30px;
+		border-bottom: 1px solid #dedede;
+		box-shadow: 0 2px 5px -3px rgba(0, 0, 0, 0.2);
+
+		li {
+			list-style: none;
+			display: inline-block;
+			margin: 0;
+			padding: 0 12px;
+			height: 35px;
+			line-height: 37px;
+			text-align: center;
+			font-size: 14px;
+			border-bottom: 2px solid transparent;
+			border-radius: 2px 2px 0 0;
+			cursor: pointer;
+			@include transition-duration(200ms);
+
+			&:hover { background-color: rgba(0, 0, 0, 0.03); }
+			&.active {
+				color: $secondary-color;
+				border-bottom-color: $secondary-color;
+				cursor: default;
+			}
+
+			&.warn { color: $problems-warning-color; }
+			&.crit { color: $problems-critical-color; }
+		}
+		li, a {
+			color: #777;
+
+			&:hover {
+				color: #666;
+			}
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+}
+#content[data-tabs=false] {
+	ul.tabs { display:none; }
+	h3 { display: block; }
+}
+/* Tabs feature is disabled */
+#content[data-tabsenabled=false] {
+	h3 { display: block; }
+}
